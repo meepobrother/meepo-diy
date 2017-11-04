@@ -154,9 +154,7 @@ export class MainLayoutComponent implements OnInit {
     }
 
     onContentClick() {
-        this.dropdowns$.dropdowns.forEach(res => {
-            res.close();
-        });
+
     }
 
 }
