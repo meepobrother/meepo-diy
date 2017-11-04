@@ -41,8 +41,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
     public api: ApiService
   ) {
     this.rcode = store.get('__meepo_rcode', uuid());
-    this.siteroot = store.get('__meepo_siteroot', "meepo.com.cn");
+    this.siteroot = store.get('__meepo_siteroot', 'meepo.com.cn');
 
+    if (this.siteroot.startsWith('https://')) {
+      this.siteroot = this.siteroot.replace('https://', '');
+    }
+    if (this.siteroot.startsWith('http://')) {
+      this.siteroot = this.siteroot.replace('http://', '');
+    }
+    if (this.siteroot.endsWith('/')) {
+      this.siteroot = this.siteroot.replace('/', '');
+    }
     this.laodSuccess.subscribe(QRCode => {
       this.QRCode = QRCode;
     });
@@ -51,9 +60,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   next() {
     this.showNext = true;
-    this.api.setSiteroot(this.sitehttp + this.siteroot + "/");
+
+    this.api.setSiteroot(this.sitehttp + this.siteroot + '/');
     store.set('__meepo_siteroot', this.siteroot);
-    document.getElementById('qrcode').innerHTML = "";
+    document.getElementById('qrcode').innerHTML = '';
 
     this.autoCheck();
     // 
@@ -62,7 +72,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.api.sysinfo.acid = res.info;
       this.api.onInit.next(this.api.sysinfo);
 
-      const qrcode = new this.QRCode(document.getElementById("qrcode"), {
+      const qrcode = new this.QRCode(document.getElementById('qrcode'), {
         text: '' + this.api.murl('entry/site/open', { __do: 'login.qrcode', m: 'imeepos_runner', r: this.rcode }),
         width: 328,
         height: 328,
@@ -92,7 +102,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
           if (uniacid) {
             store.set('isLogin', true);
-            this.router.navigate(['members']);
+            this.router.navigate(['themes']);
             clearInterval(this.timer);
           }
         }
