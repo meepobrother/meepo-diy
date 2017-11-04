@@ -10,15 +10,15 @@ import { Directive } from '@angular/core';
         <ng-content></ng-content>
     `,
     styleUrls: [
-        "./cover-content.scss"
+        './cover-content.scss'
     ]
 })
 export class CoverContent {
-    _contentBg: string = '';
-    setBg(val: string){
+    _contentBg: string;
+    setBg(val: string) {
         this._contentBg = val;
     }
- }
+}
 
 @Component({
     selector: 'cover',
@@ -30,20 +30,21 @@ export class CoverComponent implements OnInit, AfterContentInit {
     @ContentChild(CoverContent) _content: CoverContent;
 
     _contentBg: any = '';
-    @Input() 
-    set image(val: string){
-        if(val){
+    @Input()
+    set image(val: string) {
+        if (val) {
             this._background = `url(${val})`;
         }
     }
 
     constructor() { }
 
-    ngOnInit() { 
-        
+    ngOnInit() {
+
     }
 
-    ngAfterContentInit(){
+    ngAfterContentInit() {
         this._content.setBg(this._background);
     }
 }
+

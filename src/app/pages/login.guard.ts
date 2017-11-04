@@ -17,7 +17,6 @@ export class IsLoginGuard implements CanActivate {
             return true;
         } else {
             this.router.navigate(['/login']);
-            return false;
         }
     }
 }
