@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ThemesPreviewRoutingModule } from './themes-preview-routing.module';
 import { ThemesPreviewComponent } from './themes-preview.component';
 
+import { ShareModule } from '../../share';
+
 @NgModule({
   imports: [
     CommonModule,
-    ThemesPreviewRoutingModule
+    ThemesPreviewRoutingModule,
+    ShareModule
   ],
   declarations: [ThemesPreviewComponent]
 })

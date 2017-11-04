@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, AfterViewInit } from '@angular/core';
-import { LoginService } from '../../core';
 import { Router } from '@angular/router';
 import * as store from 'store';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
   pages: any[] = [];
 
   constructor(
-    public login$: LoginService,
     public router: Router,
     public fb: FormBuilder,
     public ele: ElementRef,
@@ -94,9 +92,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
           if (uniacid) {
             store.set('isLogin', true);
-            this.login$.isLogin = true;
             this.router.navigate(['members']);
-            this.login$.onLogin.next(true);
             clearInterval(this.timer);
           }
         }
