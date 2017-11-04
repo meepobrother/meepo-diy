@@ -4,23 +4,19 @@ import { IsLoginGuard } from './login.guard';
 const routes: Routes = [
   {
     path: 'themes',
-    loadChildren: 'app/pages/themes/themes.module#ThemesModule',
-    canActivate: [IsLoginGuard]
+    loadChildren: 'app/pages/themes/themes.module#ThemesModule'
   },
   {
     path: 'themes/design',
-    loadChildren: 'app/pages/themes-design/themes-design.module#ThemesDesignModule',
-    canActivate: [IsLoginGuard]
+    loadChildren: 'app/pages/themes-design/themes-design.module#ThemesDesignModule'
   },
   {
     path: 'themes/preview',
-    loadChildren: 'app/pages/themes-preview/themes-preview.module#ThemesPreviewModule',
-    canActivate: [IsLoginGuard]
+    loadChildren: 'app/pages/themes-preview/themes-preview.module#ThemesPreviewModule'
   },
   {
     path: 'login',
-    loadChildren: 'app/pages/login/login.module#LoginModule',
-    canActivate: [IsLoginGuard]
+    loadChildren: 'app/pages/login/login.module#LoginModule'
   }
 ];
 
