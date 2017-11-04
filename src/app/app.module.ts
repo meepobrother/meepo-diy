@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core';
-
+import { ServicesModule } from './services';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { CoreModule } from './core';
         redirectTo: 'themes'
       }
     ], { useHash: true }),
-    CoreModule
+    CoreModule,
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
