@@ -11,8 +11,10 @@ import { ComponentsModule } from '../components';
   ],
   declarations: [],
   exports: [
+    CommonModule,
     CoreModule,
     ComponentsModule
   ]
 })
 export class ShareModule { }
+
