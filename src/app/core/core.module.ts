@@ -14,7 +14,7 @@ import { SidebarContentComponent } from './sidebar-content/sidebar-content.compo
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 
 import { ElModule } from '../element-angular';
-import { NavTabPaneComponent } from './nav-tab-pane/nav-tab-pane.component';
+import { NavTabPaneComponent, NavTabPaneRef } from './nav-tab-pane/nav-tab-pane.component';
 
 const components = [
     MainLayoutComponent,
@@ -24,7 +24,8 @@ const components = [
     SidebarItemRight, SidebarItem,
     SidebarContentComponent,
     NavTabsComponent,
-    NavTabPaneComponent
+    NavTabPaneComponent,
+    NavTabPaneRef
 ];
 
 @NgModule({

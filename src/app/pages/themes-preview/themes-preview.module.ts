@@ -5,12 +5,14 @@ import { ThemesPreviewRoutingModule } from './themes-preview-routing.module';
 import { ThemesPreviewComponent } from './themes-preview.component';
 
 import { ShareModule } from '../../share';
+import { ComponentsModule } from '../../components';
 
 @NgModule({
   imports: [
     CommonModule,
     ThemesPreviewRoutingModule,
-    ShareModule
+    ShareModule,
+    ComponentsModule
   ],
   declarations: [ThemesPreviewComponent]
 })

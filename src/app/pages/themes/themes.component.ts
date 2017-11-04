@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import * as store from 'store';
+import { ApiService } from '../../core';
 
 @Component({
   selector: 'app-themes',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemesComponent implements OnInit {
 
-  constructor() { }
+  myThemes: any;
+  themesShops: any;
 
-  ngOnInit() {
+  father: any;
+  tabs: any;
+
+  constructor(
+    public dialog: MatDialog,
+    public api: ApiService
+  ) { }
+
+  ngOnInit() { }
+
+  onThemesShopsInit(e: any) {
+    this.themesShops = e;
+    this.father = { myThemes: this.myThemes, themesShops: this.themesShops };
+  }
+
+  navTabsInit(e: any) {
+    this.tabs = e;
+  }
+
+  onMyThemesInit(e: any) {
+    this.myThemes = e;
+    this.father = { myThemes: this.myThemes, themesShops: this.themesShops };
   }
 
 }
