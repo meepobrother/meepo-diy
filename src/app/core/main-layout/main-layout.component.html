@@ -15,9 +15,6 @@
     </sidebar-container>
     <!-- 主要内容 -->
     <sidebar-content [style.padding-left]="sidebar$._open ? '55px' : '100px'" [style.padding-right]="sidebar$._open ? '0px' : '160px'">
-        <div class="top-nav" style="padding:0px;" [style.margin-left]="sidebar$._open ? '55px' : '100px'" [style.margin-right]="sidebar$._open ? '0px' : '170px'">
-            <h5 class="top-nav-title" style="text-align:center;">小明跑腿</h5>
-        </div>
         <div (click)="onContentClick()" style="width: 100%;background-color:inherit;height: 100%;overflow: auto;">
             <ng-content></ng-content>
         </div>

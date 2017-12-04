@@ -6,18 +6,18 @@ import { MyThemesComponent } from './my-themes/my-themes.component';
 import { ThemesShopsComponent } from './themes-shops/themes-shops.component';
 import { BlankComponent } from './blank/blank.component';
 
-import { ShareModule } from '../share';
 
 const components = [
-  CoverComponent, CoverContent,
-  MyThemesComponent, ThemesShopsComponent,
+  CoverComponent, 
+  CoverContent,
+  MyThemesComponent, 
+  ThemesShopsComponent,
   BlankComponent
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
-    ShareModule
+    CommonModule
   ],
   declarations: [
     ...components
